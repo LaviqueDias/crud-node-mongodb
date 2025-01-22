@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <header style="text-align: center;">
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %><br>List, register, delete and update people's data (name, age)</p>
+  </header>
+
+  <body style="background-color: rgb(77, 207, 60); margin-top: -50px;">
+    <h2>Listing</h2>
+    <ul>
+      <% for(let i=0; i < result.length; i++) { %>
+          <li><%= result[i].name + ' | ' + result[i].age + ' | ' + result[i]._id %></li>
+        <% }%>
+    </ul>
+
+    <h2>Register</h2>
+    <form action="save" method="POST">
+      <p>
+        <label>Name:
+          <input type="text" name="name">
+        </label>
+      </p>
+
+      <p>
+        <label>Age:
+          <input type="number" name="age">
+        </label>
+      </p>
+
+      <p>
+        <input type="submit" value="save">
+      </p>
+    </form>
+
+    <h2>Exclusion</h2>
+    <form action="delete" method="POST">
+      <p>
+        <label>ID:
+          <input type="text" name="id">
+        </label>
+      </p>
+
+      <p>
+        <input type="submit" value="delete">
+      </p>
+    </form>
+
+    <h2>Update</h2>
+    <form action="update" method="POST">
+      <p>
+        <label>ID:
+          <input type="text" name="id">
+        </label>
+      </p>
+
+      <p>
+        <label>Name:
+          <input type="text" name="name">
+        </label>
+      </p>
+
+      <p>
+        <label>Age:
+          <input type="number" name="age">
+        </label>
+      </p>
+
+      <p>
+        <input type="submit" value="update">
+      </p>
+    </form>
+
+  </body>
+</html>
