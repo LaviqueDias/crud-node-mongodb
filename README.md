@@ -25,8 +25,12 @@ Este projeto consiste em uma aplicação web simples para gerenciamento de pesso
 
 ## Instalação e Configuração
 
-1. Certifique-se de ter o Node.js e o MongoDB Community Server instalados na sua máquina.
-2. Clone o repositório:
+1. Tenha o Node.js e o MongoDB Community Server instalados na sua máquina.
+2. No mesmo nível da pasta "bin"(que veio na instalação do seu MongoDB Community Server) crie uma pasta chamada "data", onde os dados irão ficar armazenados. Entre na pasta "bin" e Inicialize o servidor do MongoDB utilizando o comando:
+```
+./mongod --dbpath /home/lavique/mongodb-linux-x86_64-amazon2023-8.0.4/data
+```
+4. Clone o repositório:
 ```
 git clone https://github.com/seuusuario/seuprojeto.git
 cd seuprojeto
@@ -37,7 +41,7 @@ npm install
 ```
 4. Configure o arquivo .env com a URL de conexão ao MongoDB e o nome do seu Banco de Dados:
 ```
-MONGO_URI=mongodb://27.0.0.1:27017/crud_pessoas
+MONGO_URI=mongodb://27.0.0.1:27017
 MONGO_DATABASE=nome_do_seu_banco_de_dados
 ```
 5. Inicie o servidor:
